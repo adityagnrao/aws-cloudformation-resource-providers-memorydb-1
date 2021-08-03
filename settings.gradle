@@ -1,4 +1,4 @@
 rootProject.name = 'AWSCloudFormationResourceProvidersMemoryDB'
 
 include 'aws-memorydb-cluster'
-
+include 'aws-memorydb-parametergroup'
