@@ -1,6 +1,5 @@
 # -*-perl-*-
 
-# --- CHANGE THIS TO YOUR PACKAGE NAME ---
 package.AWSCloudFormationResourceProvidersMemoryDB = {
   interfaces = (1.0);
 
