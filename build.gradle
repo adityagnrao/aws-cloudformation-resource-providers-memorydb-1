@@ -9,7 +9,10 @@ task release
 // Copy all resource providers to folder `packaging_additional_published_artifacts` for deployment
 def projectsToRelease = [
     "aws-memorydb-cluster",
-    "aws-memorydb-parametergroup"].collect { project(it) }
+    "aws-memorydb-parametergroup",
+    "aws-memorydb-user",
+    "aws-memorydb-acl",
+     "aws-memorydb-subnetgroup"].collect { project(it) }
 configure(projectsToRelease) {
     task release(dependsOn: build) {
         group "build"

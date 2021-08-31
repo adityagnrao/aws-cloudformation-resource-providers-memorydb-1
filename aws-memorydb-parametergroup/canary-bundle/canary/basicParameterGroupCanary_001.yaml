@@ -13,4 +13,8 @@ Resources:
       Name: !Ref Name
       Description: MemoryDB CFN canary parameter group
       Family: memorydb_redis6
-      Tags: [{"Key":"service","Value":"memorydb"},{"Key":"resource","Value":"parameter-group"}]
+      Tags:	
+	-  Key: service
+           Value: memorydb
+	-  Key: resource
+           Value: parameter-group

@@ -15,4 +15,8 @@ Resources:
       NodeType: db.r6g.large
       NumShards: 1
       NumReplicasPerShard: 1
-      Tags: [{"Key":"service","Value":"memorydb"},{"Key":"resource","Value":"cluster"}]
+      Tags:
+	-Key: service
+ 	 Value: memorydb
+	 Key: resource
+	 Value: cluster
