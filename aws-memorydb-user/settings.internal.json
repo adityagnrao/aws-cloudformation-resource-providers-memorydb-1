@@ -1,0 +1,7 @@
+{
+  "FasPolicyPath": {
+    "aws": "/policies/AuthRuntime/authNPolicy/cloudformation/aws-memorydb-user.2021-08-12-00-53-32",
+    "aws-cn": "/policies/AuthRuntime/authNPolicy/cloudformation/aws-memorydb-user.2021-08-12-00-56-45-BJS",
+    "aws-us-gov": "/policies/AuthRuntime/authNPolicy/cloudformation/aws-memorydb-user.2021-08-12-00-58-50-PDT"
+  }
+}
