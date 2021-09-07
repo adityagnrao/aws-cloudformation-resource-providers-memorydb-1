@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: 2010-09-09
+Parameters:
+  Name:
+    Type: String
+    Default: canarysubnetgroup
+
+Resources:
+  SubnetGroup01:
+    Type: AWS::MemoryDB::SubnetGroup
+    Metadata:
+      Comment: MemoryDB SubnetGroup 01
+    Properties:
+      Name: !Ref Name
+      Description: MemoryDB CFN canary subnet group
+      SubnetIds: ["subnet-899475a8","subnet-e9ad4ab6","subnet-78f25835"]
+      Tags:	
+	-  Key: service
+           Value: memorydb
+	-  Key: resource
+           Value: subnet-group
