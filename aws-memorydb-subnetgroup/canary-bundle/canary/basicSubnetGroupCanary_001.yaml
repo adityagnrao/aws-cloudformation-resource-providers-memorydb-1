@@ -10,11 +10,11 @@ Resources:
     Metadata:
       Comment: MemoryDB SubnetGroup 01
     Properties:
-      Name: !Ref Name
+      SubnetGroupName: !Ref Name
       Description: MemoryDB CFN canary subnet group
-      SubnetIds: ["subnet-899475a8","subnet-e9ad4ab6","subnet-78f25835"]
-      Tags:	
-	-  Key: service
-           Value: memorydb
-	-  Key: resource
-           Value: subnet-group
+      SubnetIds: ["subnet-a8ace9ce","subnet-fc8cf7b5","subnet-0e4b0855"]
+      Tags:
+      -  Key: service
+         Value: memorydb
+      -  Key: resource
+         Value: subnet-group

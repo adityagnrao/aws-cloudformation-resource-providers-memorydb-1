@@ -16,7 +16,7 @@ Resources:
       NumShards: 1
       NumReplicasPerShard: 1
       Tags:
-	-Key: service
- 	 Value: memorydb
-	 Key: resource
-	 Value: cluster
+      -  Key: service
+         Value: memorydb
+      -  Key: resource
+         Value: cluster
