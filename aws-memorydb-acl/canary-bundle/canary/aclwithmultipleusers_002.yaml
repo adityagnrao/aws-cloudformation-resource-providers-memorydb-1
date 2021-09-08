@@ -1,0 +1,24 @@
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+  ACL1:
+    Type: AWS::MemoryDB::ACL
+    Metadata:
+      Comment: Multiple ACL
+    Properties:
+      ACLName: acl-canary-multiple-users-v1
+      UserNames: [
+        "user-acl-multiple-v1",
+        "user-acl-multiple-v2"
+      ]
+  User1:
+    Type: AWS::MemoryDB::User
+    Metadata:
+      Comment: Multiple Users
+    Properties:
+      UserName: user-acl-multiple-v1
+      AccessString: +get ~keys*
+      AuthenticationMode:
+        Type: password
+        Passwords: [
+          "test123456789123456789"
+        ]
