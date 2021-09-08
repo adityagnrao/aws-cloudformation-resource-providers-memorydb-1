@@ -10,7 +10,7 @@ Resources:
     Metadata:
       Comment: MemoryDB Cluster 01
     Properties:
-      Name: !Ref Name
+      ClusterName: !Ref Name
       Description: MemoryDB CFN canary cluster
       NodeType: db.r6g.large
       NumShards: 1

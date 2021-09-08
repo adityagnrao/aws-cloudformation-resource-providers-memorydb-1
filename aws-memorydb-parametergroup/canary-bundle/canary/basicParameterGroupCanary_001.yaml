@@ -10,7 +10,7 @@ Resources:
     Metadata:
       Comment: MemoryDB ParameterGroup 01
     Properties:
-      Name: !Ref Name
+      ParameterGroupName: !Ref Name
       Description: MemoryDB CFN canary parameter group
       Family: memorydb_redis6
       Tags:
