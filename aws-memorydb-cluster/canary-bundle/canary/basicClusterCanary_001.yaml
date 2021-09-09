@@ -15,6 +15,7 @@ Resources:
       NodeType: db.r6g.large
       NumShards: 1
       NumReplicasPerShard: 1
+      ACLName: open-access
       Tags:
       -  Key: service
          Value: memorydb
