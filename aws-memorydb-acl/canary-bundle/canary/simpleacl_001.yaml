@@ -5,17 +5,18 @@ Resources:
     Metadata:
       Comment: Simple ACL
     Properties:
-      ACLName: acl-test-for-canary-simple-v2
+      ACLName: acl-test-for-canary-simple-t1
       UserNames: [
-        "user-test-for-canary-acl-simple-v2"
+        "user-test-for-canary-acl-simple-t1"
       ]
-    DependsOn: User1
+    DependsOn:
+      - User1
   User1:
     Type: AWS::MemoryDB::User
     Metadata:
       Comment: Simple User
     Properties:
-      UserName: user-test-for-canary-acl-simple-v2
+      UserName: user-test-for-canary-acl-simple-t1
       AccessString: +get ~keys*
       AuthenticationMode:
         Type: password

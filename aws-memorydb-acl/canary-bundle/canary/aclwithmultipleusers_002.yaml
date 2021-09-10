@@ -5,17 +5,19 @@ Resources:
     Metadata:
       Comment: Multiple ACL
     Properties:
-      ACLName: acl-canary-multiple-users-v1
+      ACLName: acl-canary-multiple-users-t1
       UserNames: [
-        "user-acl-multiple-v1",
-        "user-acl-multiple-v2"
+        "user-acl-multiple-t1",
+        "user-acl-multiple-t2"
       ]
+    DependsOn:
+      - User1
   User1:
     Type: AWS::MemoryDB::User
     Metadata:
       Comment: Multiple Users
     Properties:
-      UserName: user-acl-multiple-v1
+      UserName: user-acl-multiple-t1
       AccessString: +get ~keys*
       AuthenticationMode:
         Type: password
