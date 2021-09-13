@@ -5,7 +5,7 @@ Resources:
     Metadata:
       Comment: Multiple User 1
     Properties:
-      UserName: user-test-for-canary-multiple-v1
+      UserName: user-test-for-canary-multiple-u1
       AccessString: +get ~keys*
       AuthenticationMode:
         Type: password

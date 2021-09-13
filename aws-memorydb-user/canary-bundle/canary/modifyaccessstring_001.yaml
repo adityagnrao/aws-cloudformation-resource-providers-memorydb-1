@@ -5,7 +5,7 @@ Resources:
     Metadata:
       Comment: User Access String
     Properties:
-      UserName: user-test-for-canary-accessstring-v1
+      UserName: user-test-for-canary-accessstring-u1
       AccessString: +get ~keys*
       AuthenticationMode:
         Type: password
