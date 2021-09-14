@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+  User1:
+    Type: AWS::MemoryDB::User
+    Metadata:
+      Comment: Multiple User 1
+    Properties:
+      UserName: user-test-for-canary-multiple-u1
+      AccessString: +get ~keys*
+      AuthenticationMode:
+        Type: password
+        Passwords: [
+          "test123456789123456789"
+        ]
+  User2:
+    Type: AWS::MemoryDB::User
+    Metadata:
+      Comment: Multiple User 2
+    Properties:
+      UserName: user-test-for-canary-multiple-u2
+      AccessString: +get ~keys*
+      AuthenticationMode:
+        Type: password
+        Passwords: [
+          "test123456789123456789"
+        ]

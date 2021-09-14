@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: 2010-09-09
+Parameters:
+  Name:
+    Type: String
+    Default: canaryparametergroup
+
+Resources:
+  ParameterGroup01:
+    Type: AWS::MemoryDB::ParameterGroup
+    Metadata:
+      Comment: MemoryDB ParameterGroup 01
+    Properties:
+      ParameterGroupName: !Ref Name
+      Description: MemoryDB CFN canary parameter group
+      Family: memorydb_redis6
+      Tags:
+      -  Key: service
+         Value: memorydb
+      -  Key: resource
+         Value: parameter-group

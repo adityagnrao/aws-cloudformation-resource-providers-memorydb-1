@@ -1,0 +1,7 @@
+{
+    "FasPolicyPath": {
+        "aws": "/policies/AuthRuntime/authNPolicy/cloudformation/aws-memorydb-cluster.2021-08-11-21-47-42",
+        "aws-cn": "/policies/AuthRuntime/authNPolicy/cloudformation/aws-memorydb-cluster.2021-08-11-21-54-26-BJS",
+        "aws-us-gov": "/policies/AuthRuntime/authNPolicy/cloudformation/aws-memorydb-cluster.2021-08-11-21-57-19-PDT"
+    }
+}

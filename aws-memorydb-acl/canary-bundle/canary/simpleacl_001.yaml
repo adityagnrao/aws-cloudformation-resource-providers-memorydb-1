@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+  ACL1:
+    Type: AWS::MemoryDB::ACL
+    Metadata:
+      Comment: Simple ACL
+    Properties:
+      ACLName: acl-test-for-canary-simple-t1
+      UserNames: [
+        "user-test-for-canary-acl-simple-t1"
+      ]
+    DependsOn:
+      - User1
+  User1:
+    Type: AWS::MemoryDB::User
+    Metadata:
+      Comment: Simple User
+    Properties:
+      UserName: user-test-for-canary-acl-simple-t1
+      AccessString: +get ~keys*
+      AuthenticationMode:
+        Type: password
+        Passwords: [
+          "test123456789123456789"
+        ]

@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+  User1:
+    Type: AWS::MemoryDB::User
+    Metadata:
+      Comment: User Access String
+    Properties:
+      UserName: user-test-for-canary-accessstring-u1
+      AccessString: +get
+      AuthenticationMode:
+        Type: password
+        Passwords: [
+          "test123456789123456789"
+        ]
