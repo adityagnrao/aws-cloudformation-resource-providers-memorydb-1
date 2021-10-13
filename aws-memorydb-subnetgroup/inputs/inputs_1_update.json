@@ -2,8 +2,7 @@
     "SubnetGroupName": "test-cfn-create-contract-test",
     "Description": "testing cfn update test",
     "SubnetIds": [
-        "{{ContractTestSubnet1}}",
-        "{{ContractTestSubnet2}}"
+        "{{ContractTestSubnet1}}"
     ],
     "Tags": [
         {

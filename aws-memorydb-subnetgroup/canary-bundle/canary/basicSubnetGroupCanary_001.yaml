@@ -8,14 +8,32 @@ Mappings:
   RegionMap:
     ap-south-1:
       SubnetIds: ["subnet-2d38c646", "subnet-3f391673", "subnet-05c8be7e"]
+    ap-east-1:
+      SubnetIds: ["subnet-04728f7ed4810efca","subnet-0e6fe129490860592","subnet-0c27633fa41d86226"]
     ap-northeast-1:
       SubnetIds: ["subnet-905bd6d8", "subnet-7e33cc24", "subnet-6c148047"]
+    ap-northeast-2:
+      SubnetIds: ["subnet-07cc2473865505e83","subnet-0b6526a1208fb88a8","subnet-0bfe5bbcc7496b25e"]
+    ap-southeast-1:
+      SubnetIds: ["subnet-0b988e4d962e9c69b","subnet-01cacc2a46f05b936","subnet-0f11c8d2d6fbfd86f"]
+    ap-southeast-2:
+      SubnetIds: ["subnet-048e1ff4e2cc6d299","subnet-0ab48e761eb14bedc","subnet-04f8c4ed02fd85116"]
+    ca-central-1:
+      SubnetIds: ["subnet-033e1152a4fcccb98","subnet-0dc43080cbe79bb36","subnet-0abc5bdbccd7f6766"]
+    eu-north-1:
+      SubnetIds: ["subnet-022fb3d15c9d6e3a9","subnet-0aed8d70717f093bf","subnet-0fc4f40cc00df039b"]
     eu-west-1:
       SubnetIds: ["subnet-c128039b", "subnet-0004ea79", "subnet-26f40d6d"]
+    eu-west-2:
+      SubnetIds: ["subnet-04a0c87052f64a73f","subnet-0878ee95216b91fea","subnet-03061dd57567cdd00"]
     sa-east-1:
       SubnetIds: ["subnet-a8ace9ce","subnet-fc8cf7b5","subnet-0e4b0855"]
     us-east-1:
       SubnetIds: ["subnet-a1728ced", "subnet-abcfe4f4", "subnet-066a5e27"]
+    us-east-2:
+      SubnetIds: ["subnet-00e3c4084c7f347c3","subnet-0a6e34f89ba75eb3f","subnet-0f7c2241ede95b612"]
+    us-west-1:
+      SubnetIds: ["subnet-0a88c8edd04e66fed","subnet-0be359bfa4ded0657"]
     us-west-2:
       SubnetIds: ["subnet-20f0766a", "subnet-95b1d4ed", "subnet-483e4915"]
 
