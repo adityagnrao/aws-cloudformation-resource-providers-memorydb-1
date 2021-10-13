@@ -17,7 +17,7 @@ Mappings:
     ap-southeast-1:
       SubnetIds: ["subnet-0b988e4d962e9c69b","subnet-01cacc2a46f05b936","subnet-0f11c8d2d6fbfd86f"]
     ap-southeast-2:
-      SubnetIds: ["subnet-048e1ff4e2cc6d299","subnet-0ab48e761eb14bedc","subnet-04f8c4ed02fd85116"]
+      SubnetIds: ["subnet-048e1ff4e2cc6d299","subnet-04f8c4ed02fd85116"]
     ca-central-1:
       SubnetIds: ["subnet-033e1152a4fcccb98","subnet-0dc43080cbe79bb36","subnet-0abc5bdbccd7f6766"]
     eu-north-1:
