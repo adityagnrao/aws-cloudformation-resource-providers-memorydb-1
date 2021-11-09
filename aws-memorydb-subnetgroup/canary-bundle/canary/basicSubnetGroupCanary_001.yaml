@@ -36,6 +36,8 @@ Mappings:
       SubnetIds: ["subnet-0a88c8edd04e66fed","subnet-0be359bfa4ded0657"]
     us-west-2:
       SubnetIds: ["subnet-20f0766a", "subnet-95b1d4ed", "subnet-483e4915"]
+    eu-central-1:
+      SubnetIds: ["subnet-0f29ab7c054105120", "subnet-06e34874d0e648318", "subnet-0b2b87f47f22ad3d9"]
 
 Resources:
   SubnetGroup01:
