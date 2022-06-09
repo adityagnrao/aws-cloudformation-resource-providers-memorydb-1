@@ -1,0 +1,30 @@
+{
+    "CreateInputs": {
+        "SubnetGroupName": "test-cfn-create-contract-test",
+        "Description": "testing cfn",
+        "SubnetIds": [
+            "{{awsmemorydbsubnetgroupcto1}}"
+        ]
+    },
+    "PatchInputs": [
+        {
+            "op": "replace",
+            "path": "/Description",
+            "value": "testing cfn update test"
+        },
+        {
+            "op": "add",
+            "path": "/Tags",
+            "value": [
+                {
+                    "Key": "k1",
+                    "Value": "v1"
+                },
+                {
+                    "Key": "service",
+                    "Value": "memorydb"
+                }
+            ]
+        }
+    ]
+}

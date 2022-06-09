@@ -1,0 +1,25 @@
+Resources:
+  AttachedVpc:
+    Type: 'AWS::EC2::VPC'
+    Properties:
+      CidrBlock: 172.16.0.0/16
+      EnableDnsSupport: 'true'
+      EnableDnsHostnames: 'true'
+      Tags:
+        - Key: Application
+          Value: !Ref 'AWS::StackId'
+  Subnet:
+    Type: 'AWS::EC2::Subnet'
+    DependsOn: AttachedVpc
+    Properties:
+      VpcId: !Ref AttachedVpc
+      CidrBlock: 172.16.1.0/24
+      AvailabilityZone:
+        Fn::Select:
+          - 0
+          - Fn::GetAZs: ""
+Outputs:
+  SubnetRef:
+    Value: !Ref Subnet
+    Export:
+      Name: awsmemorydbsubnetgroupcto1

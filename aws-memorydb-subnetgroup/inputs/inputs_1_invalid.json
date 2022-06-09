@@ -1,8 +1,0 @@
-{
-    "SubnetGroupName": "test-cfn-create-contract-test-invalid",
-    "Description": "testing cfn",
-    "SubnetIds": [
-        "{{ContractTestSubnet1}}",
-        "{{ContractTestSubnet2}}"
-    ]
-}
