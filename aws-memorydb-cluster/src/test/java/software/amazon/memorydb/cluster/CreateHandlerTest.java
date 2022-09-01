@@ -155,7 +155,7 @@ public class CreateHandlerTest extends AbstractTestBase {
     private CreateClusterResponse getCreateClusterReponse() {
         return CreateClusterResponse.builder().cluster(Cluster.builder().name(CLUSTER_NAME).description(CLUSTER_DESCRIPTION).status(CREATING_STATUS).nodeType(NODE_TYPE)
                                     .numberOfShards(NUM_SHARDS).subnetGroupName(SUBNET_GROUP_NAME).securityGroups(getSecurityGroupMemberships(SECURITY_GROUP_IDS))
-                                    .snsTopicArn(SNS_TOPIC_ARN).tlsEnabled(TLS_ENABLED).arn(CLUSTER_ARN).engineVersion(ENGINE_VERSION)
+                                    .snsTopicArn(SNS_TOPIC_ARN).tlsEnabled(TLS_ENABLED).dataTiering(DATA_TIERING).arn(CLUSTER_ARN).engineVersion(ENGINE_VERSION)
                                     .clusterEndpoint(software.amazon.awssdk.services.memorydb.model.Endpoint.builder().port(PORT).build())
                                     .availabilityMode(AVAILABILITY_MODE).build()).build();
     }

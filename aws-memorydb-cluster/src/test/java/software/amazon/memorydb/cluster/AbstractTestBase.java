@@ -59,6 +59,8 @@ public class AbstractTestBase {
     protected static final Integer SNAPSHOT_RETENTION_LIMIT;
     protected static final String ACL_NAME;
     protected static final Set<Tag> TAG_SET;
+    protected static final String DATA_TIERING;
+
 
     static {
         MOCK_CREDENTIALS = new Credentials("accessKey", "secretKey", "token");
@@ -87,6 +89,7 @@ public class AbstractTestBase {
         SNAPSHOT_RETENTION_LIMIT = 0;
         ACL_NAME = "open-access";
         TAG_SET = Sets.newSet(Tag.builder().key("key").value("value").build());
+        DATA_TIERING = "false";
         AwsSessionCredentials awsSessionCredentials =
                 AwsSessionCredentials.create(MOCK_CREDENTIALS.getAccessKeyId(), MOCK_CREDENTIALS.getSecretAccessKey(), MOCK_CREDENTIALS.getSessionToken());
         credentialsProvider = StaticCredentialsProvider.create(awsSessionCredentials);
@@ -164,6 +167,7 @@ public class AbstractTestBase {
                 .clusterEndpoint(software.amazon.awssdk.services.memorydb.model.Endpoint.builder().address(model.getClusterEndpoint().getAddress()).port(model.getClusterEndpoint().getPort()).build())
                 .shards(getShards(model.getNumShards(), model.getNumReplicasPerShard())).parameterGroupName(model.getParameterGroupName()).parameterGroupStatus(model.getParameterGroupStatus())
                 .status(model.getStatus())
+                .dataTiering(model.getDataTiering().toString())
                 .build();
     }
     static Cluster getTestCluster() {
@@ -172,7 +176,7 @@ public class AbstractTestBase {
                       .tlsEnabled(TLS_ENABLED).arn(CLUSTER_ARN).engineVersion(ENGINE_VERSION).aclName(ACL_NAME)
                       .maintenanceWindow(MAINTENANCE_WINDOW).snapshotWindow(SNAPSHOT_WINDOW).snapshotRetentionLimit(SNAPSHOT_RETENTION_LIMIT)
                       .clusterEndpoint(software.amazon.awssdk.services.memorydb.model.Endpoint.builder().address(ENDPOINT_ADDRESS).port(PORT).build())
-                      .availabilityMode(AVAILABILITY_MODE).shards(getShards(NUM_SHARDS, NUM_REPLICAS_PER_SHARD)).build();
+                      .availabilityMode(AVAILABILITY_MODE).shards(getShards(NUM_SHARDS, NUM_REPLICAS_PER_SHARD)).dataTiering(DATA_TIERING).build();
     }
 
     static ResourceModel getResourceModel(final Cluster cluster) {
@@ -198,7 +202,8 @@ public class AbstractTestBase {
                 .aCLName(cluster.aclName())
                 .clusterEndpoint(Translator.translateEndpoint(cluster))
                 .snapshotRetentionLimit(cluster.snapshotRetentionLimit())
-                .snapshotWindow(cluster.snapshotWindow());
+                .snapshotWindow(cluster.snapshotWindow())
+                .dataTiering(cluster.dataTiering().equals("true"));
         return builder.build();
     }
 
@@ -206,7 +211,7 @@ public class AbstractTestBase {
         return ResourceModel.builder().clusterName(CLUSTER_NAME).description(CLUSTER_DESCRIPTION).nodeType(NODE_TYPE).numShards(NUM_SHARDS)
                             .numReplicasPerShard(NUM_REPLICAS_PER_SHARD).subnetGroupName(SUBNET_GROUP_NAME).securityGroupIds(SECURITY_GROUP_IDS).port(PORT)
                             .clusterEndpoint(Endpoint.builder().address(ENDPOINT_ADDRESS).port(ENDPOINT_PORT).build()).maintenanceWindow(MAINTENANCE_WINDOW)
-                            .snsTopicArn(SNS_TOPIC_ARN).snsTopicStatus(SNS_TOPIC_STATUS).tLSEnabled(TLS_ENABLED).aCLName(ACL_NAME).build();
+                            .snsTopicArn(SNS_TOPIC_ARN).snsTopicStatus(SNS_TOPIC_STATUS).tLSEnabled(TLS_ENABLED).aCLName(ACL_NAME).dataTiering(DATA_TIERING.equals("true")).build();
     }
 
     static List<String> getSecurityGroupIds(final Cluster cluster) {
