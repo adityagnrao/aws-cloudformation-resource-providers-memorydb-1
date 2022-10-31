@@ -9,7 +9,7 @@
             "NumShards": 1,
             "NumReplicasPerShard": 1,
             "SubnetGroupName": "default",
-            "DataTiering": true,
+            "DataTiering": "true",
             "ACLName": "open-access"
         },
         "logicalResourceIdentifier": "MyResource"

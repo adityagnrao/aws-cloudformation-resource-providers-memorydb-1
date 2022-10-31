@@ -167,7 +167,7 @@ public class AbstractTestBase {
                 .clusterEndpoint(software.amazon.awssdk.services.memorydb.model.Endpoint.builder().address(model.getClusterEndpoint().getAddress()).port(model.getClusterEndpoint().getPort()).build())
                 .shards(getShards(model.getNumShards(), model.getNumReplicasPerShard())).parameterGroupName(model.getParameterGroupName()).parameterGroupStatus(model.getParameterGroupStatus())
                 .status(model.getStatus())
-                .dataTiering(model.getDataTiering().toString())
+                .dataTiering(model.getDataTiering())
                 .build();
     }
     static Cluster getTestCluster() {
@@ -203,7 +203,7 @@ public class AbstractTestBase {
                 .clusterEndpoint(Translator.translateEndpoint(cluster))
                 .snapshotRetentionLimit(cluster.snapshotRetentionLimit())
                 .snapshotWindow(cluster.snapshotWindow())
-                .dataTiering(cluster.dataTiering().equals("true"));
+                .dataTiering(cluster.dataTiering().toString());
         return builder.build();
     }
 
@@ -211,7 +211,7 @@ public class AbstractTestBase {
         return ResourceModel.builder().clusterName(CLUSTER_NAME).description(CLUSTER_DESCRIPTION).nodeType(NODE_TYPE).numShards(NUM_SHARDS)
                             .numReplicasPerShard(NUM_REPLICAS_PER_SHARD).subnetGroupName(SUBNET_GROUP_NAME).securityGroupIds(SECURITY_GROUP_IDS).port(PORT)
                             .clusterEndpoint(Endpoint.builder().address(ENDPOINT_ADDRESS).port(ENDPOINT_PORT).build()).maintenanceWindow(MAINTENANCE_WINDOW)
-                            .snsTopicArn(SNS_TOPIC_ARN).snsTopicStatus(SNS_TOPIC_STATUS).tLSEnabled(TLS_ENABLED).aCLName(ACL_NAME).dataTiering(DATA_TIERING.equals("true")).build();
+                            .snsTopicArn(SNS_TOPIC_ARN).snsTopicStatus(SNS_TOPIC_STATUS).tLSEnabled(TLS_ENABLED).aCLName(ACL_NAME).dataTiering(DATA_TIERING).build();
     }
 
     static List<String> getSecurityGroupIds(final Cluster cluster) {

@@ -28,7 +28,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#snstopicarn" title="SnsTopicArn">SnsTopicArn</a>" : <i>String</i>,
         "<a href="#snstopicstatus" title="SnsTopicStatus">SnsTopicStatus</a>" : <i>String</i>,
         "<a href="#tlsenabled" title="TLSEnabled">TLSEnabled</a>" : <i>Boolean</i>,
-        "<a href="#datatiering" title="DataTiering">DataTiering</a>" : <i>Boolean</i>,
+        "<a href="#datatiering" title="DataTiering">DataTiering</a>" : <i>String</i>,
         "<a href="#kmskeyid" title="KmsKeyId">KmsKeyId</a>" : <i>String</i>,
         "<a href="#snapshotarns" title="SnapshotArns">SnapshotArns</a>" : <i>[ String, ... ]</i>,
         "<a href="#snapshotname" title="SnapshotName">SnapshotName</a>" : <i>String</i>,
@@ -63,7 +63,7 @@ Properties:
     <a href="#snstopicarn" title="SnsTopicArn">SnsTopicArn</a>: <i>String</i>
     <a href="#snstopicstatus" title="SnsTopicStatus">SnsTopicStatus</a>: <i>String</i>
     <a href="#tlsenabled" title="TLSEnabled">TLSEnabled</a>: <i>Boolean</i>
-    <a href="#datatiering" title="DataTiering">DataTiering</a>: <i>Boolean</i>
+    <a href="#datatiering" title="DataTiering">DataTiering</a>: <i>String</i>
     <a href="#kmskeyid" title="KmsKeyId">KmsKeyId</a>: <i>String</i>
     <a href="#snapshotarns" title="SnapshotArns">SnapshotArns</a>: <i>
       - String</i>
@@ -250,7 +250,9 @@ This parameter must be set when using r6gd nodes. You cannot modify the value of
 
 _Required_: No
 
-_Type_: Boolean
+_Type_: String
+
+_Allowed Values_: <code>"true"</code> | <code>"false"</code>
 
 _Update requires_: [Replacement](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-replacement)
 
