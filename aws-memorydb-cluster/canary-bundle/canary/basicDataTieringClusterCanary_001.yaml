@@ -2,21 +2,20 @@ AWSTemplateFormatVersion: 2010-09-09
 Parameters:
   Name:
     Type: String
-    Default: canaryDataTieringCluster
+    Default: canaryNonDataTieringCluster
 
 Resources:
   Cluster01:
     Type: AWS::MemoryDB::Cluster
     Metadata:
-      Comment: MemoryDB Data Tiering Cluster 01
+      Comment: MemoryDB Non Data Tiering Cluster 01
     Properties:
       ClusterName: !Ref Name
-      Description: MemoryDB Data Tiering CFN canary cluster
-      NodeType: db.r6gd.xlarge
+      Description: MemoryDB Non Data Tiering CFN canary cluster
+      NodeType: db.r6g.xlarge
       NumShards: 1
       NumReplicasPerShard: 1
       ACLName: open-access
-      DataTiering: true
       Tags:
       -  Key: service
          Value: memorydb
