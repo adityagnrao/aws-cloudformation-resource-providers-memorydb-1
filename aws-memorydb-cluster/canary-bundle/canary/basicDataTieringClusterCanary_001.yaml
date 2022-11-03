@@ -2,7 +2,7 @@ AWSTemplateFormatVersion: 2010-09-09
 Parameters:
   Name:
     Type: String
-    Default: canaryNonDataTieringCluster
+    Default: canarynondatatieringcluster
 
 Resources:
   Cluster01:
@@ -18,6 +18,6 @@ Resources:
       ACLName: open-access
       Tags:
       -  Key: service
-         Value: memorydb
+         Value: mdb
       -  Key: resource
-         Value: cluster
+         Value: cs
