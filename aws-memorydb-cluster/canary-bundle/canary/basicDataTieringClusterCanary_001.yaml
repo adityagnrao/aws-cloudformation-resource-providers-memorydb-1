@@ -2,20 +2,40 @@ AWSTemplateFormatVersion: 2010-09-09
 Parameters:
   Name:
     Type: String
-    Default: canarynondatatieringcluster
+    Default: canarydatatieringcluster
+
+Conditions:
+  IsDataTieringEnabled:
+    Or:
+    - Equals [us-east-1, Ref: AWS::Region]
+    - Equals [us-east-2, Ref: AWS::Region]
+    - Equals [us-west-1, Ref: AWS::Region]
+    - Equals [us-west-2, Ref: AWS::Region]
+    - Equals [ap-south-1, Ref: AWS::Region]
+    - Equals [ap-northeast-1, Ref: AWS::Region]
+    - Equals [ap-southeast-1, Ref: AWS::Region]
+    - Equals [ap-southeast-2, Ref: AWS::Region]
+    - Equals [eu-west-1, Ref: AWS::Region]
+    - Equals [eu-west-3, Ref: AWS::Region]
+    - Equals [eu-central-1, Ref: AWS::Region]
+    - Equals [ca-central-1, Ref: AWS::Region]
+    - Equals [sa-east-1, Ref: AWS::Region]
+
 
 Resources:
   Cluster01:
+    Condition: IsDataTieringEnabled
     Type: AWS::MemoryDB::Cluster
     Metadata:
-      Comment: MemoryDB Non Data Tiering Cluster 01
+      Comment: MemoryDB Data Tiering Cluster 01
     Properties:
       ClusterName: !Ref Name
-      Description: MemoryDB Non Data Tiering CFN canary cluster
-      NodeType: db.r6g.xlarge
+      Description: MemoryDB Data Tiering CFN canary cluster
+      NodeType: db.r6gd.xlarge
       NumShards: 1
       NumReplicasPerShard: 1
       ACLName: open-access
+      DataTiering: true
       Tags:
       -  Key: service
          Value: mdb
