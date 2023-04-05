@@ -1,0 +1,30 @@
+Resources:
+  SnsTopic:
+    Type: 'AWS::SNS::Topic'
+    Properties:
+      TopicName: sns-topic-for-ct
+  KmsKey:
+    Type: 'AWS::KMS::Key'
+    Properties:
+      Description: 'Kms key for MemoryDB Contract Tests'
+      KeySpec: SYMMETRIC_DEFAULT
+      KeyPolicy:
+        Version: 2012-10-17
+        Id: key-default-1
+        Statement:
+          - Sid: Enable IAM User Permissions
+            Effect: Allow
+            Principal:
+              AWS: !Sub 'arn:${AWS::Partition}:iam::${AWS::AccountId}:root'
+            Action: 'kms:*'
+            Resource: '*'
+Outputs:
+  SnsTopicRef:
+    Value: !Ref SnsTopic
+    Export:
+      Name: awsmemorydbclustercto1
+  KmsKeyArn:
+    Value:
+      Fn::GetAtt: [ KmsKey, Arn ]
+    Export:
+      Name: awsmemorydbclustercto2

@@ -138,7 +138,7 @@ _Required_: No
 
 _Type_: String
 
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+_Update requires_: [Replacement](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-replacement)
 
 #### SecurityGroupIds
 
@@ -245,14 +245,12 @@ _Type_: Boolean
 _Update requires_: [Replacement](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-replacement)
 
 #### DataTiering
-A flag that enables data tiering when set to true. Data tiering is only supported for clusters using the r6gd node type. 
-This parameter must be set when using r6gd nodes. You cannot modify the value of DataTiering after the cluster is created.
 
 _Required_: No
 
 _Type_: String
 
-_Allowed Values_: <code>"true"</code> | <code>"false"</code>
+_Allowed Values_: <code>true</code> | <code>false</code>
 
 _Update requires_: [Replacement](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-replacement)
 
@@ -352,13 +350,9 @@ For more information about using the `Fn::GetAtt` intrinsic function, see [Fn::G
 
 The status of the cluster. For example, Available, Updating, Creating.
 
-#### Address
+#### ClusterEndpoint
 
-Returns the <code>Address</code> value.
-
-#### Port
-
-Returns the <code>Port</code> value.
+Returns the <code>ClusterEndpoint</code> value.
 
 #### ARN
 

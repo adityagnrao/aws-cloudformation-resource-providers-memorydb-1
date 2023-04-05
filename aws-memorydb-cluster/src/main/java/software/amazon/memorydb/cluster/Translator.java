@@ -214,6 +214,7 @@ public class Translator {
                 .snapshotRetentionLimit(cluster.snapshotRetentionLimit())
                 .aCLName(cluster.aclName())
                 .snsTopicStatus(cluster.snsTopicStatus())
+                .kmsKeyId(cluster.kmsKeyId())
                 .clusterEndpoint(translateEndpoint(cluster)).build();
     }
 
@@ -233,16 +234,14 @@ public class Translator {
         return streamOfOrEmpty(describeClustersResponse.clusters()).map(cluster -> translateFromReadResponse(cluster)).collect(Collectors.toList());
     }
 
-    public static UntagResourceRequest translateToUntagResourceRequest(String arn, Set<software.amazon.memorydb.cluster.Tag> tagsToRemove) {
+    public static UntagResourceRequest translateToUntagResourceRequest(String arn, Set<String> tagsToRemove) {
         return UntagResourceRequest.builder()
                 .resourceArn(arn)
-                .tagKeys(tagsToRemove != null ? tagsToRemove.stream()
-                        .map(tag -> tag.getKey())
-                        .collect(Collectors.toList()) : null)
+                .tagKeys(tagsToRemove)
                 .build();
     }
 
-    public static TagResourceRequest translateToTagResourceRequest(String arn, Set<software.amazon.memorydb.cluster.Tag> tagsToAdd) {
+    public static TagResourceRequest translateToTagResourceRequest(String arn, List<software.amazon.memorydb.cluster.Tag> tagsToAdd) {
         return  TagResourceRequest.builder()
                 .resourceArn(arn)
                 .tags(translateTagsToSdk(tagsToAdd))
