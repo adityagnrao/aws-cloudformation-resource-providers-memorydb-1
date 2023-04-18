@@ -1,5 +1,4 @@
 {
-    "artifact_type": "RESOURCE",
     "typeName": "AWS::MemoryDB::Cluster",
     "language": "java",
     "runtime": "java8",
@@ -15,6 +14,5 @@
         "codegen_template_path": "guided_aws",
         "protocolVersion": "2.0.0"
     },
-    "logProcessorEnabled": "true",
     "executableEntrypoint": "software.amazon.memorydb.cluster.HandlerWrapperExecutable"
 }

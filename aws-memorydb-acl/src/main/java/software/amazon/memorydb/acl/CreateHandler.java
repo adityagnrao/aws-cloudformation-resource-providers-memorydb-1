@@ -36,7 +36,7 @@ public class CreateHandler extends BaseHandlerStd {
             .then(progress ->
                 proxy.initiate("AWS-MemoryDB-ACL::Create", proxyClient, progress.getResourceModel(),
                     progress.getCallbackContext())
-                    .translateToServiceRequest((model) -> Translator.translateToCreateRequest(resourceModel, request))
+                    .translateToServiceRequest(Translator::translateToCreateRequest)
                     .makeServiceCall((awsRequest, client) -> handleExceptions(() ->
                         client.injectCredentialsAndInvokeV2(awsRequest, client.client()::createACL)))
                     .stabilize(

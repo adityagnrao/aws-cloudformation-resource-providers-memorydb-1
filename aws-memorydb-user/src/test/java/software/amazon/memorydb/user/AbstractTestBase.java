@@ -1,10 +1,8 @@
 package software.amazon.memorydb.user;
 
 import com.google.common.collect.ImmutableList;
-import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 import org.mockito.internal.util.collections.Sets;
 import software.amazon.awssdk.awscore.AwsRequest;
 import software.amazon.awssdk.awscore.AwsResponse;
@@ -124,19 +122,4 @@ public class AbstractTestBase {
       }
     };
   }
-    static Map<String, String> translateTagsToMap(final Set<Tag> tags) {
-        return tags.stream()
-            .collect(Collectors.toMap(Tag::getKey, Tag::getValue));
-
-    }
-
-    static Set<software.amazon.awssdk.services.memorydb.model.Tag> translateTagsToSdk(
-        final Set<Tag> tags) {
-        return tags.stream()
-            .map(tag -> software.amazon.awssdk.services.memorydb.model.Tag.builder()
-                .key(tag.getKey())
-                .value(tag.getValue())
-                .build())
-            .collect(Collectors.toSet());
-}
 }
