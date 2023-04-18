@@ -184,8 +184,7 @@
     "additionalProperties": false,
     "readOnlyProperties": [
         "/properties/Status",
-        "/properties/ClusterEndpoint/Address",
-        "/properties/ClusterEndpoint/Port",
+        "/properties/ClusterEndpoint",
         "/properties/ARN",
         "/properties/ParameterGroupStatus"
     ],
