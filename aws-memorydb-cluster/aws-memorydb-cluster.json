@@ -184,8 +184,7 @@
     "additionalProperties": false,
     "readOnlyProperties": [
         "/properties/Status",
-        "/properties/ClusterEndpoint/Address",
-        "/properties/ClusterEndpoint/Port",
+        "/properties/ClusterEndpoint",
         "/properties/ARN",
         "/properties/ParameterGroupStatus"
     ],
@@ -200,8 +199,14 @@
         "/properties/DataTiering",
         "/properties/KmsKeyId",
         "/properties/Port",
+        "/properties/SubnetGroupName",
         "/properties/SnapshotArns",
         "/properties/SnapshotName"
+    ],
+    "writeOnlyProperties": [
+        "/properties/SnapshotArns",
+        "/properties/SnapshotName",
+        "/properties/FinalSnapshotName"
     ],
     "primaryIdentifier": [
         "/properties/ClusterName"

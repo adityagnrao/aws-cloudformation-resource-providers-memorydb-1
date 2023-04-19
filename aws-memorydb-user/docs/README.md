@@ -93,3 +93,4 @@ Indicates the user status. Can be "active", "modifying" or "deleting".
 #### Arn
 
 The Amazon Resource Name (ARN) of the user account.
+
